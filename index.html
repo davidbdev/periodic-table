@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table of Elements</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="fetch('periodic-table.json')">
+    <header id="header">
+        <p id="header-text">AtomicInfo.net</p>
+    </header>
+    <main id="main">
+        <article id="periodic-table-container">
+            <h1 id="page-title">Periodic Table of Elements</h1>
+            <section id="periodic-table-of-elements">
+                <section id="empty-placeholder-1"></section>
+                <section id="element-details">
+                    <div id="element-details-tile">
+                        <p id="dtl-atomic-number" class="dtl-atomic-number">1</p>
+                        <p id="dtl-element-symbol" class="dtl-element-symbol">H</p>
+                        <p id="dtl-element-name" class="dtl-element-name">Hydrogen</p>
+                        <p id="dtl-atomic-mass" class="dtl-atomic-mass">1.0080</p>
+                    </div>
+                    <div id="element-details-key">
+                        <p class="dtl-atomic-number">Atomic number</p>
+                        <p class="dtl-element-symbol">Symbol</p>
+                        <p class="dtl-element-name">Element name</p>
+                        <p class="dtl-atomic-mass">Atomic mass</p>
+                    </div>
+                    <div id="element-details-properties">
+                        <p class="detail-property">
+                            Chemical group: <span id="detail-chemical-group" class="detail-property-text">Nonmetal</span>
+                        </p>
+                        <p class="detail-property">
+                            Standard state: <span id="detail-standard-state" class="detail-property-text">Gas</span>
+                        </p>
+                        <p class="detail-property">
+                            Electron configuration: <span id="detail-electron-configuration" class="detail-property-text">1S<sup>1</sup></span>
+                        </p>
+                        <p class="detail-property">
+                            Oxidation states: <span id="detail-oxidation-states" class="detail-property-text">+1, -1</span>
+                        </p>
+                        <p class="detail-property">
+                            Electronegativity (Pauling Scale): <span id="detail-electronegativity" class="detail-property-text">2.2</span>
+                        </p>
+                        <p class="detail-property">
+                            Atomic Radius (van der Waals), pm: <span id="detail-atomic-radius" class="detail-property-text">120</span>
+                        </p>
+                        <p class="detail-property">
+                            Ionization energy, eV: <span id="detail-ionization-energy" class="detail-property-text">13.598</span>
+                        </p>
+                        <p class="detail-property">
+                            Electron affinity, eV: <span id="detail-electronic-affinity" class="detail-property-text">0.754</span>
+                        </p>
+                        <p class="detail-property">
+                            Melting point, K: <span id="detail-melting-point" class="detail-property-text">13.81</span>
+                        </p>
+                        <p class="detail-property">
+                            Boiling point, K: <span id="detail-boiling-point" class="detail-property-text">20.28</span>
+                        </p>
+                        <p class="detail-property">
+                            Density, g/cm<sup>3</sup>: <span id="detail-density" class="detail-property-text">0.00008988</span>
+                        </p>
+                        <p class="detail-property">
+                            Year discovered: <span id="detail-year-discovered" class="detail-property-text">1776</span>
+                        </p>
+                    </div>
+                </section>
+                <section id="empty-placeholder-2"></section>
+                <section id="lanth-placeholder-1" class="lanth-act-placeholder">
+                    <p class="placeholder-text">Lanthanides*</p>
+                </section>
+                <section id="act-placeholder-1" class="lanth-act-placeholder">
+                    <p class="placeholder-text">Actinides**</p>
+                </section>
+                <section id="empty-placeholder-3"></section>
+                <section id="lanth-placeholder-2" class="lanth-act-placeholder">
+                    <p class="placeholder-text">*</p>
+                </section>
+                <section id="act-placeholder-2" class="lanth-act-placeholder">
+                    <p class="placeholder-text">**</p>
+                </section>
+                <!--
+                <div class="element-tile">
+                <p class="atomic-number">1</p>
+                <p class="element-symbol">H</p>
+                <p class="element-name">Hydrogen</p>
+                <p class="atomic-mass">1.0080</p>
+                </div>
+                -->
+            </section>
+        </article>
+    </main>
+    <footer id="footer">
+        <section id="data-sources">
+            <p id="data-source-heading">Data Sources</p>
+            <p><a href="https://pubchem.ncbi.nlm.nih.gov/periodic-table/">National Library of Medicine</a></p>
+            <p><a href="https://www.nuclear-power.com/">nuclearpower.com</a></p>
+            <p><a href="https://www.periodic-table.org/">periodic-table.org</a></p>
+        </section>
+        <section id="footer-credits-section">
+            <p id="made-by-credit">Made by davidbabb.dev</p>
+            <p id="footer-year">2020</p>
+        </section>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
