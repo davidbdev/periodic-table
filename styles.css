@@ -60,14 +60,17 @@ table {
 #f4a261
 #e76f51
 #E7370D
-
-
-
 --*/
 
-html, body {
+html {
     height: 100%;
+    width: 100%;
     margin: 0;
+    
+    font-size: 16px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    line-height: 1.15;
 }
 
 body {
@@ -75,57 +78,66 @@ body {
     flex-flow: column nowrap;
     justify-content: flex-start;
     position:absolute;
+    
+    height: 100%;
     width: 100%;
 }
 
 h1 {
-    font-family: 'Kanit', sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    color: #264653;
-
-    align-self: center;
+    font-size: 4rem;
 }
 
-p {
+h2 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+    margin: 1.25rem;
+    
     font-family: 'Titillium Web', sans-serif;
-    font-size: 12px;
-    line-height: 1.15;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #264653;
 }
 
-#header {
+header {
     flex: 0 0 100px;
+    align-content: space-around;
+
+    padding: 1.25rem;
+
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    color: #1d3557;
+
     background-color: #a8dadc;
 }
 
-#header-text {
-    margin: 20px;
-    font-family: 'Kanit', sans-serif;
-    font-weight: 300;
-    font-size: 48px;
-    color: #1d3557;
-
-    align-self: center;
-}
-
-#main {
+main {
     flex: 1 1 auto;
     background-color: #edf6f9;
+}
+
+footer {
+    flex: 1 1 6rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+
+    padding: 1.25rem;
+
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: #264653;
+
+    background-color: #a8dadc;
 }
 
 #periodic-table-container {
     display: grid;
     grid: 1fr 9fr 0.5fr / 1fr 18fr 1fr;
     position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-#page-title {
-    margin: 20px;
-    
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
 }
 
 #periodic-table-of-elements {
@@ -135,7 +147,7 @@ p {
     display: grid;
     grid: repeat(9, 1fr) / repeat(18, 1fr);
 
-    padding: 10px;
+    font-size: 1rem;
 }
 
 #empty-placeholder-1 {
@@ -151,24 +163,29 @@ p {
     grid: 1fr 6fr 1fr/ 1fr 1fr 12px 4fr;
     gap: 6px;
 
-    padding: 12px;
+    padding: 0.75rem;
+
+    font-size: 1rem;
+
     border: solid 1px #dedede;
     border-radius: 6px;
 }
 
 #element-details-tile {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
-    justify-self: center;
-    align-self: center;
 
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+
+    font-size: 1.25rem;
+    font-weight: 300;
 
     border: solid 2px #2a9d8f;
     border-radius: 6px;
@@ -176,19 +193,21 @@ p {
 }
 
 #element-details-key {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
     grid-row: 2 / 3;
     grid-column: 2 / 3;
     justify-self: center;
     align-self: center;
     
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;    
+    
     width: 100%;
     height: 100%;
-    padding-left: 6px;
-    box-sizing: border-box;
+
+    font-size: 1.25em;
+    font-weight: 300;
 
     background-color: #edf6f9;
 }
@@ -238,38 +257,6 @@ p {
     grid-column: 3 / 4;
 }
 
-#footer {
-    flex: 1 1 100px;
-    background-color: #a8dadc;
-
-    font-family: 'Kanit', sans-serif;
-    font-weight: 300;
-    font-size: 48px;
-    color: #264653;
-}
-
-#data-sources {
-    margin: 10px 20px;
-}
-
-#data-source-heading {
-    font-family: 'Kanit', sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    color: #1d3557;
-}
-
-#footer-credits-section {
-    margin: 10px 20px;
-}
-
-#made-by-credit {
-    font-family: 'Kanit', sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    color: #1d3557;
-}
-
 .element-tile {
     display: flex;
     flex-direction: column;
@@ -282,53 +269,46 @@ p {
     height: 100%;
 
     font-family: 'Titillium Web', sans-serif;
+    font-weight: 300;
     border: solid 1px #dedede;
     border-radius: 6px;
     background-color: #e9c46a;
 
     cursor: pointer;
-
 }
 
 .element-tile:hover {
+    z-index: 1;
+
     width: 110%;
     height: 110%;
+
+    font-weight: 300;
+
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    z-index: 1;
-    
 }
 
 .element-tile:active {
-    width: 100%;
-    height: 100%;
     border: solid 1px #2a9d8f;
-    background-color: #edf6f9;;
-    cursor: pointer;
 }
 
 .atomic-number, .atomic-mass {
-    font-weight: 300;
+    font-size: 0.75rem;
 }
 
-.element-symbol {
+.element-symbol{
     font-weight: 600;
-    font-size: 24px;
-}
-
-.dtl-atomic-number, .dtl-element-name, .dtl-atomic-mass {
-    font-size: 18px;
-    font-weight: 300;
+    font-size: 1.5rem;
 }
 
 .dtl-element-symbol {
-    font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 2em;
 }
 
 .detail-property {
     font-weight: 600;
-    font-size: 16px;
 }
 
 .detail-property-text {
@@ -341,4 +321,6 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    font-size: 0.75em;
 }
